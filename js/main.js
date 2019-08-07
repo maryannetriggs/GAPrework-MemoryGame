@@ -1,5 +1,29 @@
 // array to store the four cards
-var cards = ["queen", "queen", "king", "king"];
+var cards = [
+{
+	rank: "queen",
+	suit: "hearts",
+	cardImage: "images/queen-of-hearts.png"
+},
+
+{
+	rank: "queen",
+	suit: "diamonds",
+	cardImage: "images/queen-of-diamonds.png"
+},
+
+{
+	rank: "king",
+	suit: "hearts",
+	cardImage: "images/king-of-hearts.png"
+},
+
+{
+	rank: "king",
+	suit: "diamonds",
+	cardImage: "images/king-of-diamonds.png"
+}
+];
 
 //empty array for cards in play
 var cardsInPlay = [];
@@ -7,9 +31,9 @@ var cardsInPlay = [];
 //function to check for m{atch
 function checkForMatch() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
-  console.log("You found a match!");
+  alert("You found a match!");
 	} else {
-  console.log("Sorry, try again.");
+  alert("Sorry, try again.");
 	};
 };
 
@@ -17,10 +41,12 @@ function checkForMatch() {
 function flipCard(cardId) {
 
 	//displaying which card has been flipped
-	console.log("user flipped " + cards[cardId]);
+	console.log("user flipped " + cards[cardId].rank);
+	console.log(cards[cardId].cardImage);
+	console.log(cards[cardId].suit);
 
 	//pushing selected card in empty array
-	cardsInPlay.push(cards[cardId]);
+	cardsInPlay.push(cards[cardId].rank);
 
 	//comparing two cards selected by user
 	if (cardsInPlay.length === 2) {
@@ -34,5 +60,6 @@ function flipCard(cardId) {
 
 flipCard(0);
 flipCard(2);
+
 
 
